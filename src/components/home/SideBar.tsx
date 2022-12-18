@@ -2,6 +2,7 @@ import * as React from "react";
 import type { FC, ReactNode } from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
+import AppBar from "@mui/material/AppBar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
@@ -14,7 +15,7 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 
-const drawerWidth = 940;
+const drawerWidth = 440;
 
 
 
@@ -35,8 +36,8 @@ const style = {
 
 export const SideBar: FC = () => {
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
+    <Box sx={{ display: "flex"}}>
+
       <Drawer
         variant="permanent"
         sx={{
@@ -44,11 +45,11 @@ export const SideBar: FC = () => {
           flexShrink: 0,
           [`& .MuiDrawer-paper`]: {
             width: drawerWidth,
-            boxSizing: "border-box",
+            boxSizing: "border-box", mt:10
           },
         }}
       >
-        <Toolbar />
+        
         <Box sx={{ overflow: "auto" }}>
           <List>
             {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (

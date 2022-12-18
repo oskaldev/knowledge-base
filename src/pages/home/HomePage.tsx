@@ -1,14 +1,12 @@
-
-import { AppLayout } from '@app/layouts/AppLayouts'
-import { SideBar } from '@components/home/SideBar';
+import { AppLayout } from "@app/layouts/AppLayouts";
+import { SideBar } from "@components/home/SideBar";
 
 export const HomePage = () => {
   return (
     <div>
       <AppLayout>
-  <SideBar />
+        <SideBar />
       </AppLayout>
-      
     </div>
   );
-}
+};
