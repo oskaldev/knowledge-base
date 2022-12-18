@@ -1,6 +1,5 @@
 import { AuthProvider } from 'react-admin'
 import { Simulate } from 'react-dom/test-utils'
-import progress = Simulate.progress
 
 interface IAuthProvider {
   username: string
@@ -47,4 +46,4 @@ const authProvider: AuthProvider = {
   getPermissions: () => Promise.resolve('')
 }
 
-export { authProvider }
+export default authProvider

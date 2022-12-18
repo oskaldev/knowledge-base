@@ -5,15 +5,10 @@ import {
   required, SelectInput,
   SimpleForm, TextInput
 } from 'react-admin'
-import React, { useEffect } from 'react'
+import React from 'react'
+import { SelectAsync } from '@components/admin'
 
-export const CreateStuff = (props: any) => {
-
-  debugger
-  useEffect(() => {
-
-  }, [])
-
+export const CreateStaff = () => {
   return (
     <Create>
       <SimpleForm>
@@ -22,10 +17,17 @@ export const CreateStuff = (props: any) => {
           label="ФИО"
           validate={required()}
         />
-        <SelectInput
-          source="department"
+        <SelectAsync
+          resource="departments"
+          source="departmentId"
+          optionText="name"
+          label="Отдел"
+        />
+        <SelectAsync
+          resource="jobs"
+          source="jobId"
+          optionText="name"
           label="Должность"
-          validate={required()}
         />
         <DateInput
           source="dateBirth"

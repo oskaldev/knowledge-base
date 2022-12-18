@@ -1,15 +1,28 @@
-import { DeleteButton, Show, SimpleShowLayout, TextField } from 'react-admin'
-import { Box } from '@mui/material'
+import {
+  Datagrid,
+  List,
+  NumberField,
+  RichTextField,
+  Show,
+  SimpleShowLayout,
+  TextField, useRecordContext
+} from 'react-admin'
 
 export const ShowCategory = () => {
   return (
     <Show>
       <SimpleShowLayout>
-        <TextField source="id" label="ID" />
-        <TextField source="title" label="Названия" />
-        <Box sx={{ mt: 7 }} />
-        <DeleteButton />
+        <TextField source="title" />
+        <RichTextField source="body" />
+        <NumberField source="nb_views" />
+
+        <List resource="materials" pagination={false} exporter={false}>
+          <Datagrid>
+            <TextField source="title" />
+          </Datagrid>
+        </List>
       </SimpleShowLayout>
     </Show>
   )
 }
+

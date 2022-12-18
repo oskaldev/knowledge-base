@@ -9,16 +9,59 @@
       "id": 15
     }
   ],
-  "materials": [],
+  "materials": [
+    {
+      "id": 90,
+      "title": "приказ о зачислении",
+      "urlFile": "https://download.samplelib.com/xls/sample-heavy-1.xls",
+      "categoryId": 14,
+      "type": "xls"
+    }
+  ],
   "staff": [
     {
+      "fullName": "Будько Иван Иваныч",
+      "dateBirth": "2022-12-10",
+      "isSuccess": true,
+      "jobId": 3,
+      "departmentId": 1,
       "id": 1,
-      "fullName": "some comment",
-      "email": "example@mail.ru",
-      "department": "2002-01-11",
-      "dateBirth": "12/09/2000",
-      "password": "sadaskdlnak",
-      "isSuccess": false
+      "department": {
+        "id": 3,
+        "name": "Маркетинговый"
+      },
+      "job": {
+        "id": 1,
+        "name": "Джун"
+      }
+    }
+  ],
+  "departments": [
+    {
+      "id": 1,
+      "name": "Коммерческий"
+    },
+    {
+      "id": 2,
+      "name": "Финансовый"
+    },
+    {
+      "id": 3,
+      "name": "Маркетинговый"
+    }
+  ],
+  "jobs": [
+    {
+      "id": 1,
+      "name": "Джун"
+    },
+    {
+      "id": 2,
+      "name": "Миддл"
+    },
+    {
+      "id": 3,
+      "name": "Сеньер"
     }
   ]
 }

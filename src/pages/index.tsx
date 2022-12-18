@@ -6,7 +6,6 @@ import { routeConstants } from '@internal/routes'
 import { AdminPanel } from '@pages/adminPanel'
 import { HomePage } from '@pages/home'
 
-
 export const InitRoutes: FC = () => {
   return useRoutes([
     {
@@ -19,3 +18,4 @@ export const InitRoutes: FC = () => {
     }
   ])
 }
+

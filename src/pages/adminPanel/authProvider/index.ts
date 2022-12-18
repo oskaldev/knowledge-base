@@ -1,1 +1,2 @@
-export * from './basic-auth'
+import authProvider from  './basic-auth'
+export default authProvider

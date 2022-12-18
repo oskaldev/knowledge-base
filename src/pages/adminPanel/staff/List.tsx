@@ -16,8 +16,9 @@ export const ListStaff: FC = () => {
       <Datagrid rowClick="show">
         <TextField source="id" label="ID" />
         <TextField source="fullName" label="ФИО" />
-        <TextField source="department" label="Должность" />
-        <DateField source="department" label="Дата рождения" />
+        <TextField source="department.name" label="Отдел" />
+        <TextField source="job.name" label="Должность" />
+        <DateField source="dateBirth" label="Дата рождения" />
         <BooleanField source="isSuccess" label="Приватный доступ" />
         <Box sx={{ flexFlow: 1 }} />
         <EditButton />

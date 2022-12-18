@@ -1,21 +1,21 @@
 import {
   BooleanField,
   DateField,
-  DeleteButton,
   Show,
   SimpleShowLayout,
   TextField
 } from 'react-admin'
 import { Box } from '@mui/material'
 
-export const ShowStuff = () => {
+export const ShowStaff = () => {
   return (
     <Show>
       <SimpleShowLayout>
         <TextField source="id" label="ID" />
         <TextField source="fullName" label="ФИО" />
-        <TextField source="department" label="Должность" />
-        <DateField source="department" label="Дата рождения" />
+        <TextField source="department.name" label="Отдел" />
+        <TextField source="job.name" label="Должность" />
+        <DateField source="dateBirth" label="Дата рождения" />
         <BooleanField source="isSuccess" label="Приватный доступ" />
         <Box sx={{ flexFlow: 1 }} />
       </SimpleShowLayout>
