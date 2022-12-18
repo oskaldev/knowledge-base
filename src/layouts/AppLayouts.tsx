@@ -13,7 +13,7 @@ import {
   MenuItem,
   Typography,
   Modal,
-  TextField
+  TextField,
   // Link
 } from "@mui/material";
 import AdbIcon from "@mui/icons-material/Adb";
@@ -23,33 +23,33 @@ interface IAppLayout {
 }
 
 const style = {
-  position: 'absolute' as 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 800,
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
   height: 600,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: "background.paper",
+  border: "2px solid #000",
   boxShadow: 24,
-  p: 4
-}
+  p: 4,
+};
 
 export const AppLayout: FC<IAppLayout> = ({ children }) => {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
-  )
+  );
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget)
-  }
+    setAnchorElUser(event.currentTarget);
+  };
 
   const handleCloseUserMenu = () => {
-    setAnchorElUser(null)
-  }
+    setAnchorElUser(null);
+  };
 
-  const [open, setOpen] = React.useState(false)
-  const handleOpen = () => setOpen(true)
-  const handleClose = () => setOpen(false)
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <>
@@ -131,60 +131,65 @@ export const AppLayout: FC<IAppLayout> = ({ children }) => {
                         aria-describedby="modal-modal-description"
                       >
                         <Box sx={style}>
-                          <Typography
-                            id="modal-modal-title"
-                            variant="h6"
-                            component="h2"
-                          >
-                            Settings Profile:
-                          </Typography>
-                          <Typography
-                            id="modal-modal-description"
-                            sx={{ mt: 2 }}
-                          >
-                            <TextField
-                              id="filled-basic"
-                              label="Name"
-                              variant="filled"
-                            />
-                          </Typography>
-                          <Typography
-                            id="modal-modal-description"
-                            sx={{ mt: 2 }}
-                          >
-                            <TextField
-                              id="filled-basic"
-                              label="Surname"
-                              variant="filled"
-                            />
-                          </Typography>
-                          <Typography
-                            id="modal-modal-description"
-                            sx={{ mt: 2 }}
-                          >
-                            <TextField
-                              id="filled-basic"
-                              label="Change password"
-                              variant="filled"
-                              type="password"
-                            />
-                          </Typography>
-                          <Typography
-                            id="modal-modal-description"
-                            sx={{ mt: 2 }}
-                          >
-                            <TextField
-                              sx={{ pt: 2 }}
-                              id="filled-basic"
-                              label="Birthdate"
-                              variant="filled"
-                              type="date"
-                            />
-                          </Typography>
-
-                          <Button sx={{ mt: 12 }} variant="contained">
-                            Save
-                          </Button>
+                          <Box>
+                            <Typography
+                              id="modal-modal-title"
+                              variant="h6"
+                              component="h2"
+                            >
+                              Settings Profile:
+                            </Typography>
+                            <Typography
+                              id="modal-modal-description"
+                              sx={{ mt: 2 }}
+                              width="800px"
+                            >
+                              <TextField
+                                id="filled-basic"
+                                label="Name"
+                                variant="filled"
+                              />
+                            </Typography>
+                            <Typography
+                              id="modal-modal-description"
+                              sx={{ mt: 2 }}
+                            >
+                              <TextField
+                                id="filled-basic"
+                                label="Surname"
+                                variant="filled"
+                              />
+                            </Typography>
+                            <Typography
+                              id="modal-modal-description"
+                              sx={{ mt: 2 }}
+                            >
+                              <TextField
+                                id="filled-basic"
+                                label="Change password"
+                                variant="filled"
+                                type="password"
+                              />
+                            </Typography>
+                            <Typography
+                              id="modal-modal-description"
+                              sx={{ mt: 2 }}
+                            >
+                              <TextField
+                                sx={{ pt: 2 }}
+                                id="filled-basic"
+                                label="Birthdate"
+                                variant="filled"
+                                type="date"
+                              />
+                            </Typography>
+                            <Button
+                              sx={{ width: 200, mt: 12 }}
+                              variant="contained"
+                            >
+                              Save
+                            </Button>
+                          </Box>
                         </Box>
                       </Modal>
                     </div>
