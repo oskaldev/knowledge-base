@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 export const PasswordСhange: FC = ({}) => {
   const paperStyle = {
-    padding: 20,
+    padding: 21,
     height: "70vh",
     width: 480,
     margin: "10px auto",
