@@ -19,8 +19,8 @@ export const PasswordСhange: FC = ({}) => {
     margin: "10px auto",
   };
   const avatarStyle = { backgroundColor: "#1bbd7e" };
-  const btnstyle = { margin: "40px 0", padding: 20 };
-  const linkTo = {color:'white', textDecoration:'none'}
+  const btnstyle = { margin: "40px 0" };
+  const linkTo = {color:'white', padding: "0px 50px", textDecoration:'none'}
   return (
     <Grid sx={{ pt: 10 }}>
       <Paper elevation={10} style={paperStyle}>
