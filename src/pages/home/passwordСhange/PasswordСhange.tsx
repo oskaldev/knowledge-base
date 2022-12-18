@@ -33,15 +33,7 @@ export const PasswordСhange: FC = ({}) => {
           </Typography>
         </Grid2>
         <Typography sx={{ pt: 2 }}>
-          <TextField type="password" label="Пароль" fullWidth required />
-        </Typography>
-        <Typography sx={{ pt: 2 }}>
-          <TextField
-            label="Повторите пароль"
-            type="password"
-            fullWidth
-            required
-          />
+          <TextField type="password" label="Введите новый пароль" fullWidth required />
         </Typography>
         <Button
           type="submit"
