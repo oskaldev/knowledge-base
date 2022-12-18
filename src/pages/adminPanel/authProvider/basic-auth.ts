@@ -17,7 +17,6 @@ const authProvider: AuthProvider = {
     password
   }: IAuthProvider) => {
     if (username !== admin.username || password !== admin.password) {
-      debugger
       return Promise.reject()
     }
     localStorage.setItem('username', username)

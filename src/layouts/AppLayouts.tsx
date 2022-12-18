@@ -1,5 +1,5 @@
-import * as React from "react";
-import type { FC, ReactNode } from "react";
+import * as React from 'react'
+import type { FC, ReactNode } from 'react'
 import {
   AppBar,
   Box,
@@ -13,43 +13,44 @@ import {
   MenuItem,
   Typography,
   Modal,
-  TextField,
-  // Link
-} from "@mui/material";
-import AdbIcon from "@mui/icons-material/Adb";
+  TextField
+} from '@mui/material'
+import AdbIcon from '@mui/icons-material/Adb'
+import { Link } from 'react-router-dom'
+import { routeConstants } from '@internal/routes'
 
 interface IAppLayout {
   children: ReactNode;
 }
 
 const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
+  position: 'absolute' as 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
   width: 400,
   height: 600,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
   boxShadow: 24,
-  p: 4,
-};
+  p: 4
+}
 
 export const AppLayout: FC<IAppLayout> = ({ children }) => {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
-  );
+  )
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
+    setAnchorElUser(event.currentTarget)
+  }
 
   const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+    setAnchorElUser(null)
+  }
 
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [open, setOpen] = React.useState(false)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
 
   return (
     <>
@@ -58,8 +59,11 @@ export const AppLayout: FC<IAppLayout> = ({ children }) => {
           <Toolbar
             disableGutters
             sx={{
-              display: { xs: "flex", justifyContent: "space-around" },
-              mr: 1,
+              display: {
+                xs: 'flex',
+                justifyContent: 'space-around'
+              },
+              mr: 1
             }}
           >
             <Typography
@@ -69,11 +73,11 @@ export const AppLayout: FC<IAppLayout> = ({ children }) => {
               href="/"
               sx={{
                 mr: 2,
-                display: { xs: "flex" },
+                display: { xs: 'flex' },
                 fontWeight: 400,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none'
               }}
             >
               <AdbIcon />
@@ -85,11 +89,11 @@ export const AppLayout: FC<IAppLayout> = ({ children }) => {
               component="div"
               sx={{
                 mr: 2,
-                display: { xs: "flex" },
+                display: { xs: 'flex' },
                 fontWeight: 400,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none'
               }}
             >
               corporate platform
@@ -102,23 +106,23 @@ export const AppLayout: FC<IAppLayout> = ({ children }) => {
                 </IconButton>
               </Tooltip>
               <Menu
-                sx={{ mt: "45px" }}
+                sx={{ mt: '45px' }}
                 id="menu-appbar"
                 anchorEl={anchorElUser}
                 anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
+                  vertical: 'top',
+                  horizontal: 'right'
                 }}
                 keepMounted
                 transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
+                  vertical: 'top',
+                  horizontal: 'right'
                 }}
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
                 <MenuItem
-                  sx={{ display: "block" }}
+                  sx={{ display: 'block' }}
                   onClick={handleCloseUserMenu}
                 >
                   <MenuItem>
@@ -184,7 +188,10 @@ export const AppLayout: FC<IAppLayout> = ({ children }) => {
                               />
                             </Typography>
                             <Button
-                              sx={{ width: 200, mt: 12 }}
+                              sx={{
+                                width: 200,
+                                mt: 12
+                              }}
                               variant="contained"
                             >
                               Save
@@ -197,6 +204,11 @@ export const AppLayout: FC<IAppLayout> = ({ children }) => {
                   <MenuItem>
                     <Button>Выйти</Button>
                   </MenuItem>
+                  <MenuItem>
+                    <Button>
+                      <Button component={Link} to={`/${routeConstants.ADMIN.path}`}>Админ панель</Button>
+                    </Button>
+                  </MenuItem>
                 </MenuItem>
               </Menu>
             </Box>
@@ -205,5 +217,5 @@ export const AppLayout: FC<IAppLayout> = ({ children }) => {
       </AppBar>
       <>{children}</>
     </>
-  );
-};
+  )
+}
