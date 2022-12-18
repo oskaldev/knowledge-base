@@ -1,12 +1,16 @@
 {
   "catalogs": [
     {
-      "title": "Обучение",
+      "name": "Обучение",
       "id": 14
     },
     {
-      "title": "ksadn",
+      "name": "ksadn",
       "id": 15
+    },
+    {
+      "name": "Тест",
+      "id": 16
     }
   ],
   "materials": [
@@ -16,6 +20,13 @@
       "urlFile": "https://download.samplelib.com/xls/sample-heavy-1.xls",
       "categoryId": 14,
       "type": "xls"
+    },
+    {
+      "id": 91,
+      "title": "Что то интересное",
+      "urlFile": "http://portal.tpu.ru/SHARED/a/ANFI/study/Tab/Resistance_2.ppt",
+      "categoryId": 14,
+      "type": "ppt"
     }
   ],
   "staff": [

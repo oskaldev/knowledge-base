@@ -1,15 +1,12 @@
 import {
   Admin,
-  CustomRoutes,
   Resource,
-  Show,
-  SimpleShowLayout,
-  useRecordContext
 } from 'react-admin'
 import jsonServerProvider from 'ra-data-json-server'
 import authProvider from '@adminPanel/authProvider'
-import FolderOpenIcon from '@mui/icons-material/FolderOpen'
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline'
+import FolderOpenIcon from '@mui/icons-material/FolderOpen';
+import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAlt';
 
 import {
   ListCategory,
@@ -17,10 +14,11 @@ import {
   EditCategory, ShowCategory
 } from '@adminPanel/сategories'
 import { CreateStaff, EditStaff, ListStaff, ShowStaff } from '@adminPanel/staff'
-import { Route } from 'react-router-dom'
-import Material from '@adminPanel/сategories/material/Material'
+import { CreateMaterial, EditMaterial, ListMaterial } from '@adminPanel/material'
 
 const dataProvider = jsonServerProvider('http://localhost:3000')
+
+
 export const AdminPanel = () => (
   <Admin
     basename="/admin"
@@ -28,13 +26,21 @@ export const AdminPanel = () => (
     dataProvider={dataProvider}
   >
     <Resource
-      options={{ label: 'Документы' }}
+      options={{ label: 'Каталоги' }}
       name="catalogs"
       list={ListCategory}
       create={CreateCategory}
       edit={EditCategory}
       show={ShowCategory}
       icon={FolderOpenIcon}
+    />
+    <Resource
+      options={{ label: 'Материалы' }}
+      name="materials"
+      list={ListMaterial}
+      create={CreateMaterial}
+      edit={EditMaterial}
+      icon={SystemUpdateAltIcon}
     />
     <Resource
       options={{ label: 'Сотрудники' }}

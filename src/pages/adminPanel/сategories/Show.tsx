@@ -1,26 +1,18 @@
 import {
-  Datagrid,
-  List,
   NumberField,
-  RichTextField,
   Show,
   SimpleShowLayout,
-  TextField, useRecordContext
+  TextField,
 } from 'react-admin'
+import { ListMaterial } from '../material'
 
 export const ShowCategory = () => {
   return (
     <Show>
       <SimpleShowLayout>
-        <TextField source="title" />
-        <RichTextField source="body" />
-        <NumberField source="nb_views" />
-
-        <List resource="materials" pagination={false} exporter={false}>
-          <Datagrid>
-            <TextField source="title" />
-          </Datagrid>
-        </List>
+        <NumberField source="id" label="ID"/>
+        <TextField source="name" label="Название"/>
+        <ListMaterial />
       </SimpleShowLayout>
     </Show>
   )

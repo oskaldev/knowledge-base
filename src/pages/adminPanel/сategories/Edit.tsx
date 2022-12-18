@@ -5,7 +5,7 @@ export const EditCategory = (props: EditProps) => {
   return (
     <Edit title={'Изменить категории'} {...props}>
       <SimpleForm>
-        <TextInput source="title" label="Названия"/>
+        <TextInput source="name" label="Названия"/>
       </SimpleForm>
     </Edit>
   );

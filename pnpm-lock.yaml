@@ -9,6 +9,7 @@ specifiers:
   '@types/react': ^18.0.26
   '@types/react-dom': ^18.0.9
   '@vitejs/plugin-react': ^3.0.0
+  classnames: ^2.3.2
   json-server: ^0.17.1
   ra-data-json-server: ^4.6.2
   react: ^18.2.0
@@ -26,6 +27,7 @@ dependencies:
   '@fontsource/roboto': 4.5.8
   '@mui/icons-material': 5.11.0_2q3lgv2yds5td5xef72rojpyny
   '@mui/material': 5.11.0_lskpmcsdi7ipu6qpuapyu56ihm
+  classnames: 2.3.2
   ra-data-json-server: 4.6.2_zk7myoevwrm2zkxmi34cwfyncy
   react: 18.2.0
   react-admin: 4.6.2_ib3m5ricvtkl2cll7qpr2f6lvq
@@ -1048,6 +1050,10 @@ packages:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
     dev: true
+
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: false
 
   /cliui/8.0.1:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}

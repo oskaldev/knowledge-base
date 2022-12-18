@@ -7,7 +7,7 @@ export const CreateCategory = () => {
     <Create>
       <SimpleForm>
         <TextField source="id" defaultValue={id} label="ID" />
-        <TextInput source="title" fullWidth validate={required()} label="Названия" />
+        <TextInput source="name" fullWidth validate={required()} label="Названия" />
       </SimpleForm>
     </Create>
   )
