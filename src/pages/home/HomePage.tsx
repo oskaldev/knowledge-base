@@ -6,8 +6,9 @@ export const HomePage = () => {
   return (
     <div>
       <AppLayout>
-        <SideBar />
+  <SideBar />
       </AppLayout>
+      
     </div>
   );
 }

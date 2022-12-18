@@ -1,6 +1,5 @@
 import * as React from "react";
 import type { FC, ReactNode } from "react";
-import { Link } from "react-router-dom";
 import {
   AppBar,
   Box,
@@ -17,7 +16,6 @@ import {
   TextField,
   // Link
 } from "@mui/material";
-import { routeConstants } from "@internal/routes";
 import AdbIcon from "@mui/icons-material/Adb";
 
 interface IAppLayout {
@@ -37,10 +35,7 @@ const style = {
   p: 4,
 };
 
-export const AppLayout: FC<IAppLayout> = ({ children: ReactNode }) => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
+export const AppLayout: FC<IAppLayout> = ({ children }) => {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
@@ -57,135 +52,153 @@ export const AppLayout: FC<IAppLayout> = ({ children: ReactNode }) => {
   const handleClose = () => setOpen(false);
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar
-          disableGutters
-          sx={{
-            display: { xs: "flex", justifyContent: "space-around" },
-            mr: 1,
-          }}
-        >
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
+    <>
+      <AppBar position="static">
+        <Container maxWidth="xl">
+          <Toolbar
+            disableGutters
             sx={{
-              mr: 2,
-              display: { xs: "flex" },
-              fontWeight: 400,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
+              display: { xs: "flex", justifyContent: "space-around" },
+              mr: 1,
             }}
           >
-            <AdbIcon />
-            CP
-          </Typography>
-          <Typography
-            variant="h4"
-            noWrap
-            component="div"
-            sx={{
-              mr: 2,
-              display: { xs: "flex" },
-              fontWeight: 400,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            corporate platform
-          </Typography>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="/"
+              sx={{
+                mr: 2,
+                display: { xs: "flex" },
+                fontWeight: 400,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
               }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
             >
-              <MenuItem sx={{ display: "block" }} onClick={handleCloseUserMenu}>
-                <MenuItem>
-                  <div>
-                    <Button onClick={handleOpen}>Settings</Button>
-                    <Modal
-                      open={open}
-                      onClose={handleClose}
-                      aria-labelledby="modal-modal-title"
-                      aria-describedby="modal-modal-description"
-                    >
-                      <Box sx={style}>
-                        <Typography
-                          id="modal-modal-title"
-                          variant="h6"
-                          component="h2"
-                        >
-                          Settings Profile:
-                        </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                          <TextField
-                            id="filled-basic"
-                            label="Name"
-                            variant="filled"
-                          />
-                        </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                          <TextField
-                            id="filled-basic"
-                            label="Surname"
-                            variant="filled"
-                          />
-                        </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                          <TextField
-                            id="filled-basic"
-                            label="Change password"
-                            variant="filled"
-                            type="password"
-                          />
-                        </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                          <TextField
-                            sx={{ pt: 2 }}
-                            id="filled-basic"
-                            label="Birthdate"
-                            variant="filled"
-                            type="date"
-                          />
-                        </Typography>
+              <AdbIcon />
+              CP
+            </Typography>
+            <Typography
+              variant="h4"
+              noWrap
+              component="div"
+              sx={{
+                mr: 2,
+                display: { xs: "flex" },
+                fontWeight: 400,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              corporate platform
+            </Typography>
 
-                        <Button sx={{ mt: 12 }} variant="contained">
-                          Save
-                        </Button>
-                      </Box>
-                    </Modal>
-                  </div>
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <Avatar />
+                </IconButton>
+              </Tooltip>
+              <Menu
+                sx={{ mt: "45px" }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                <MenuItem
+                  sx={{ display: "block" }}
+                  onClick={handleCloseUserMenu}
+                >
+                  <MenuItem>
+                    <div>
+                      <Button onClick={handleOpen}>Settings</Button>
+                      <Modal
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description"
+                      >
+                        <Box sx={style}>
+                          <Typography
+                            id="modal-modal-title"
+                            variant="h6"
+                            component="h2"
+                          >
+                            Settings Profile:
+                          </Typography>
+                          <Typography
+                            id="modal-modal-description"
+                            sx={{ mt: 2 }}
+                          >
+                            <TextField
+                              id="filled-basic"
+                              label="Name"
+                              variant="filled"
+                            />
+                          </Typography>
+                          <Typography
+                            id="modal-modal-description"
+                            sx={{ mt: 2 }}
+                          >
+                            <TextField
+                              id="filled-basic"
+                              label="Surname"
+                              variant="filled"
+                            />
+                          </Typography>
+                          <Typography
+                            id="modal-modal-description"
+                            sx={{ mt: 2 }}
+                          >
+                            <TextField
+                              id="filled-basic"
+                              label="Change password"
+                              variant="filled"
+                              type="password"
+                            />
+                          </Typography>
+                          <Typography
+                            id="modal-modal-description"
+                            sx={{ mt: 2 }}
+                          >
+                            <TextField
+                              sx={{ pt: 2 }}
+                              id="filled-basic"
+                              label="Birthdate"
+                              variant="filled"
+                              type="date"
+                            />
+                          </Typography>
+
+                          <Button sx={{ mt: 12 }} variant="contained">
+                            Save
+                          </Button>
+                        </Box>
+                      </Modal>
+                    </div>
+                  </MenuItem>
+                  <MenuItem>
+                    <Button>Выйти</Button>
+                  </MenuItem>
                 </MenuItem>
-                <MenuItem>
-                  <Button>Выйти</Button>
-                </MenuItem>
-              </MenuItem>
-            </Menu>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+              </Menu>
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
+      <>{children}</>
+    </>
   );
 };
