@@ -16,7 +16,7 @@ import {
 import { CreateStaff, EditStaff, ListStaff, ShowStaff } from '@adminPanel/staff'
 import { CreateMaterial, EditMaterial, ListMaterial } from '@adminPanel/material'
 
-const dataProvider = jsonServerProvider('http://localhost:3000')
+const dataProvider = jsonServerProvider(import.meta.env.VITE_API)
 
 
 export const AdminPanel = () => (
