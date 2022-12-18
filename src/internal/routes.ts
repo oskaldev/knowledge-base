@@ -16,6 +16,10 @@ export const routeConstants = Object.freeze<IRoutes>({
   ADMIN: {
     name: 'Админ панель',
     path: 'admin'
+  },
+  PASSWORD_CHANGE: {
+    name: 'Смена пароля',
+    path: 'password-change'
   }
 })
 

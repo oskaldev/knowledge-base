@@ -1,16 +1,12 @@
-import { Link } from 'react-router-dom'
-import { Button, Typography } from '@mui/material'
-
-import { routeConstants } from '@internal/routes'
+import { AppLayout } from "@app/layouts/AppLayouts";
+import { SideBar } from "@components/home/SideBar";
 
 export const HomePage = () => {
   return (
     <div>
-      <Typography variant="h4">Тут будет главнная страница</Typography>
-
-      <Button>
-        <Link to={routeConstants.ADMIN.path}>Перейти в админку</Link>
-      </Button>
+      <AppLayout>
+        <SideBar />
+      </AppLayout>
     </div>
-  )
-}
+  );
+};
